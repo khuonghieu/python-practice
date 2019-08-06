@@ -177,7 +177,7 @@ modify_data = {
 
 ## Expected output
 
-A new file `data2.json` should be created with the following content:
+A new file `result.json` should be created with the following content:
 
 ```json
 {
