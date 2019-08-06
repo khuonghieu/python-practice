@@ -4,7 +4,7 @@
 
 A string as the following: 
 
-> I completed **number_of_sessions** sessions and I rated my expert **number_of_stars** stars
+> I completed **{number_of_sessions}** sessions and I rated my expert **{number_of_stars}** stars
 
 while:
 - `number_of_sessions` is any number in `[0, 1, ...9]`
@@ -37,17 +37,17 @@ The result after conversion:
 
 - Move your code logic into a function that takes 2 parameters `make_step(number_of_sessions, number_of_stars)`. 
   
-  Then you should call your function as `make_step(2, 'five')`.
+  Then you should be able to call your function as `make_step(2, 'five')`.
 
 - Move your dictionary maps into a class `Session` in a module called `enums`.
   
   It should be accessible via `enums.Session`. And update your `make_step`.
 
-- Create an exception `InvalidValue` extends from `Exception`.
+- Create an exception `InvalidValueException` extends from `Exception`.
 
-  It takes a message as the following: `InvalidValue('Invalid number of sessions')`.
+  It takes a message as the following: `InvalidValueException('Invalid number of sessions')`.
 
-- When `make_step` be called with invalid parameter, it should throw an `InvalidValue` exception. 
+- When `make_step` be called with invalid parameter(s), it should throw an `InvalidValueException` exception. 
   
   Try to catch and print out the message.
 
@@ -71,20 +71,20 @@ The result after conversion:
   ```
 
 
-# Problem #2
+# Problem #3
 
 ## Given
 
-3 lists of numbers:
+A list, a tuple and a set of numbers:
 ```
 a = [1, 2, 3, 4, 5, 6, 7, 8]
-b = [3, 4, 1, 2, 7, 6, 5, 8]
-c = [5, 6, 7, 8, 1, 2, 3, 4]
+b = (3, 4, 1, 2, 7, 6, 5, 8)
+c = {5, 6, 7, 8, 1, 2, 3, 4}
 ```
 
 ## Then
 
-- Decide if 3 lists contains the same set of numbers.
+- Decide if `a`, `b`, `c` contain the same set of numbers.
 
 
 ## Expected output
@@ -92,7 +92,7 @@ c = [5, 6, 7, 8, 1, 2, 3, 4]
 The result should be `true`.
 
 
-# Problem #3
+# Problem #4
 
 ## Given
 
@@ -135,9 +135,9 @@ A file `data.json` with the following content:
 }
 ```
 
-An object with the following content:
+An object with the following content (**yes, you can copy & paste**):
 
-```json
+```python
 modify_data = {
   "expiration_time": 200,
   "product": "querychat",
@@ -172,7 +172,7 @@ modify_data = {
 
 ## Then
 
-- Come up with an algorithm to update data in file `data.json` with the object provided **without using direct object assignment**.
+- Come up with an algorithm to update data in file `data.json` with the object provided **without using direct object/ variable assignment**.
 - The result should be written to file `result.json`.
 
 ## Expected output
