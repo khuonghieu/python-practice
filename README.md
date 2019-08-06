@@ -1,4 +1,4 @@
-# Problem #1
+# Problem #1: The Basics/ String/ Dictionary
 
 ## Given
 
@@ -27,7 +27,7 @@ The result after conversion:
 > I completed **two** sessions and I rated my expert **5** stars
 
 
-# Problem #2
+# Problem #2: Object-Oriented Programming/ Exceptions
 
 ## Given
 
@@ -71,7 +71,7 @@ The result after conversion:
   ```
 
 
-# Problem #3
+# Problem #3: Advanced Data Types
 
 ## Given
 
@@ -92,7 +92,7 @@ c = {5, 6, 7, 8, 1, 2, 3, 4}
 The result should be `true`.
 
 
-# Problem #4
+# Problem #4: Files/ JSON/ Dictionary/ Algorithm
 
 ## Given
 
@@ -102,7 +102,7 @@ A file `data.json` with the following content:
 {
   "expiration_time": 300,
   "id": 0,
-  "product": "excelchat",
+  "product": "xchat",
   "storefront": {
       "banner_enabled": true,
       "banner_text": "Dynamic offer banner",
@@ -140,7 +140,7 @@ An object with the following content (**yes, you can copy & paste**):
 ```python
 modify_data = {
   "expiration_time": 200,
-  "product": "querychat",
+  "product": "qchat",
   "utm_campaign": str(time.time()),
   "storefront": {
     "banner_enabled": False,
@@ -183,7 +183,7 @@ A new file `data2.json` should be created with the following content:
 {
     "expiration_time": 200,
     "id": 0,
-    "product": "querychat",
+    "product": "qchat",
     "storefront": {
         "banner_enabled": false,
         "purchase_options": [
