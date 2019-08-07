@@ -31,7 +31,7 @@ The result after conversion:
 
 ## Given
 
-- Problem #1.
+- Existing code from Problem #1.
 
 ## Then
 
@@ -187,8 +187,8 @@ modify_data = {
   - `StorefrontConfig(data: object)`
   - `update(modify_data: object)`: Write an algorithm to update data of the object using the dictionary provided (**not using direct variable assignment**).
 - Create class `FileController`: 
-  - `read_file(file_name): StorefrontConfig`.
-  - `write_file(object: StorefrontConfig, file_name)`.
+  - `read_file(file_name): StorefrontConfig`
+  - `write_file(object: StorefrontConfig, file_name)`
 - The result should be written to file `result.json`.
 
 ## Expected output
