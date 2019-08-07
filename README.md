@@ -35,38 +35,49 @@ The result after conversion:
 
 ## Then
 
-- Move your code logic into a function that takes 2 parameters `make_step(number_of_sessions, number_of_stars)`. 
+- Create a class `Step`:
+  - `Step(number_of_sessions: int, number_of_stars: string)`
+  - `make_step()`
+- Create a class `Session` in `enums`:
+  - `NUMBER_TO_TEXT_MAP`
+  - `TEXT_TO_NUMBER_MAP`
+- Create a class `InvalidValueException`:
+  - `message`
+
+- Move your code logic into the method `make_step()`. 
   
-  Then you should be able to call your function as `make_step(2, 'five')`.
+  Then you should be able to call your method as `Step(2, 'five').make_step()`.
 
 - Move your dictionary maps into a class `Session` in a module called `enums`.
   
-  It should be accessible via `enums.Session`. And update your `make_step`.
+  It should be accessible via `enums.Session`.
+  
+  Remember update your `make_step` to use the enums.
 
 - Create an exception `InvalidValueException` extends from `Exception`.
 
   It takes a message as the following: `InvalidValueException('Invalid number of sessions')`.
 
-- When `make_step` be called with invalid parameter(s), it should throw an `InvalidValueException` exception. 
+- When `Step` be created with invalid parameter(s), it should throw an `InvalidValueException` exception. 
   
   Try to catch and print out the message.
 
 ## Expected output
 
-- `Enums` and `Exception` should have their own modules.
+- `Step`, `Session` and `Exception` should have their own modules.
 - Expected result:
   ```
-  make_step(2, 'five')
+  Step(2, 'five').make_step()
   > I completed two sessions and I rated my expert 5 stars
   ```
 
   ```
-  make_step(0, 'five')
+  Step(0, 'five').make_step()
   > Invalid number of sessions
   ```
 
   ```
-  make_step(2, 'ten')
+  Step(2, 'ten').make_step()
   > Invalid number of stars
   ```
 
@@ -135,7 +146,7 @@ A file `data.json` with the following content:
 }
 ```
 
-An object with the following content (**yes, you can copy & paste**):
+An object `modify_data` with the following content:
 
 ```python
 modify_data = {
@@ -172,10 +183,22 @@ modify_data = {
 
 ## Then
 
-- Come up with an algorithm to update data in file `data.json` with the object provided **without using direct object/ variable assignment**.
+- Create class model entities `StorefrontConfig`:
+  - `StorefrontConfig(data: object)`
+  - `update(modify_data: object)`: Write an algorithm to update data of the object using the dictionary provided (**not using direct variable assignment**).
+- Create class `FileController`: 
+  - `read_file(file_name): StorefrontConfig`.
+  - `write_file(object: StorefrontConfig, file_name)`.
 - The result should be written to file `result.json`.
 
 ## Expected output
+
+```
+file_controller = FileController()
+config = file_controller.read_file("data.json")
+config.update(modify_data)
+file_controller.write_file(config, "result.json")
+```
 
 A new file `result.json` should be created with the following content:
 
