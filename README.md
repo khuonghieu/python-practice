@@ -8,12 +8,15 @@ A string as the following:
 
 while:
 - `number_of_sessions` is any number in `[1, 2, ...9]`
+
 - `number_of_stars` is any text in `[one, two, three, four, five]`
 
 ## Then
 
 - Convert `number_of_sessions` from number to text.
+
 - Convert `number_of_stars` from text to number.
+
 - Using dictionaries and string methods.
 
 ## Expected output
@@ -35,36 +38,64 @@ The result after conversion:
 
 ## Then
 
-- Create a class `Step`:
-  - `Step(number_of_sessions: int, number_of_stars: string)`
-  - `make_step()`
-- Create a class `Session` in `enums`:
-  - `NUMBER_TO_TEXT_MAP`
-  - `TEXT_TO_NUMBER_MAP`
-- Create a class `InvalidValueException`:
-  - `message`
+- Create a class `Step` contains:
 
-- Move your code logic into the method `make_step()`. 
+  - Instance variables:
+    - `number_of_sessions: int`
+
+    - `number_of_stars: int`
+
+  - Methods:
+    - `__init__(number_of_sessions: int, number_of_stars: string)`
+  
+    - `make_step(self)`
+
+- Move your code logic into the method `make_step`. 
   
   Then you should be able to call your method as `Step(2, 'five').make_step()`.
 
-- Move your dictionary maps into a class `Session` in a module called `enums`.
+--
+
+- In module `enums`, create a model entities `Session`, it should contain all of your constants as its *class variables*.
+
+- The constants should be accessible via `enums.Session`.
   
-  It should be accessible via `enums.Session`.
-  
-  Remember update your `make_step` to use the enums.
+  Remember update your `make_step` to use the enums you just defined.
+
+  ```python
+  # enums.py
+  class Session(object):
+      NUMBER_TO_TEXT_MAP: dict
+
+  # other.py
+  from enums import Session
+  Session.NUMBER_TO_TEXT_MAP
+  ```
+
+--
+
+- Create an exeption called `InvalidValueException`:
+
+  - Instance variables:
+    - `message: string`
+
+  - Methods:
+    - `__init__(message: string)`
 
 - Create an exception `InvalidValueException` extends from `Exception`.
 
-  It takes a message as the following: `InvalidValueException('Invalid number of sessions')`.
+  Then you can raise the exception as the following: `raise InvalidValueException("Invalid number of sessions")`.
 
-- When `Step` be created with invalid parameter(s), it should throw an `InvalidValueException` exception. 
+--
+
+- When `Step` be created with invalid `number_of_session` or `number_of_stars`, it should raise an `InvalidValueException` exception with the corresponding message. 
   
-  Try to catch and print out the message.
+  Try to catch and print out the message using `try`, `except`.
 
 ## Expected output
 
 - `Step`, `Session` and `Exception` should have their own modules.
+
 - Expected result:
   ```
   Step(2, 'five').make_step()
@@ -95,7 +126,7 @@ c = {5, 6, 7, 8, 1, 2, 3, 4}
 
 ## Then
 
-- Decide if `a`, `b`, `c` contain the same set of numbers.
+- Decide if `a`, `b`, `c` all contain the same set of numbers.
 
 
 ## Expected output
@@ -184,11 +215,21 @@ modify_data = {
 ## Then
 
 - Create class model entities `StorefrontConfig`:
-  - `StorefrontConfig(data: object)`
-  - `update(modify_data: object)`: Write an algorithm to update data of the object using the dictionary provided (**not using direct variable assignment**).
+
+  - Methods:
+
+    - `StorefrontConfig(data: object)`
+
+    - `update(modify_data: object)`: Write an algorithm to update data of the object using the dictionary provided (**not using direct variable assignment**).
+
 - Create class `FileController`: 
-  - `read_file(file_name): StorefrontConfig`
-  - `write_file(object: StorefrontConfig, file_name)`
+
+  - Methods:
+
+    - `read_file(file_name: string): StorefrontConfig`: To read a json with name `file_name`, it should return a `StorefrontConfig` instance with the data in the text file.
+
+    - `write_file(object: StorefrontConfig, file_name)`: To write the `StorefrontConfig` instance down to file `file_name` as text.
+
 - The result should be written to file `result.json`.
 
 ## Expected output
