@@ -7,7 +7,7 @@ A string as the following:
 > I completed **{number_of_sessions}** sessions and I rated my expert **{number_of_stars}** stars
 
 while:
-- `number_of_sessions` is any number in `[0, 1, ...9]`
+- `number_of_sessions` is any number in `[1, 2, ...9]`
 - `number_of_stars` is any text in `[one, two, three, four, five]`
 
 ## Then
