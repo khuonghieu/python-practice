@@ -97,19 +97,19 @@ The result after conversion:
 - `Step`, `Session` and `Exception` should have their own modules.
 
 - Expected result:
-  ```
-  Step(2, 'five').make_step()
-  > I completed two sessions and I rated my expert 5 stars
-  ```
-
-  ```
-  Step(0, 'five').make_step()
-  > Invalid number of sessions
+  ```python
+  Step(2, "five").make_step()
+  # > I completed two sessions and I rated my expert 5 stars
   ```
 
+  ```python
+  Step(0, "five").make_step()
+  # > Invalid number of sessions
   ```
-  Step(2, 'ten').make_step()
-  > Invalid number of stars
+
+  ```python
+  Step(2, "ten").make_step()
+  # > Invalid number of stars
   ```
 
 
@@ -118,7 +118,7 @@ The result after conversion:
 ## Given
 
 A list, a tuple and a set of numbers:
-```
+```python
 a = [1, 2, 3, 4, 5, 6, 7, 8]
 b = (3, 4, 1, 2, 7, 6, 5, 8)
 c = {5, 6, 7, 8, 1, 2, 3, 4}
@@ -218,23 +218,23 @@ modify_data = {
 
   - Methods:
 
-    - `StorefrontConfig(data: object)`
+    - `__init__(data: object)`
 
     - `update(modify_data: object)`: Write an algorithm to update data of the object using the dictionary provided (**not using direct variable assignment**).
 
 - Create class `FileController`: 
 
-  - Methods:
+  - Static Methods:
 
-    - `read_file(file_name: string): StorefrontConfig`: To read a json with name `file_name`, it should return a `StorefrontConfig` instance with the data in the text file.
+    - `read_file(file_name: string): StorefrontConfig`: To read a json with name `file_name`, it should return a `StorefrontConfig` object with the data in the text file.
 
-    - `write_file(object: StorefrontConfig, file_name)`: To write the `StorefrontConfig` instance down to file `file_name` as text.
+    - `write_file(object: StorefrontConfig, file_name: string)`: To write the `StorefrontConfig` object down to file `file_name` as text.
 
 - The result should be written to file `result.json`.
 
 ## Expected output
 
-```
+```python
 file_controller = FileController()
 config = file_controller.read_file("data.json")
 config.update(modify_data)
