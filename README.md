@@ -250,6 +250,9 @@ A new file `result.json` should be created with the following content:
     "product": "qchat",
     "storefront": {
         "banner_enabled": false,
+        "banner_text": "Dynamic offer banner",
+        "description": "",
+        "enabled": true,
         "purchase_options": [
             {
                 "button_text": "Dynamic offer 1 - button_text",
