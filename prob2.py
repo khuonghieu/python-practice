@@ -10,10 +10,6 @@ def convertString(inString):
                 strList[i] = strList[i].replace(value ,key)
     return " ".join(strList)
 
-print(convertString('1 one 2 two 3 three'))
-print(convertString('I completed 2 sessions and I rated my expert five stars'))
-print()
-
 class Step():
     def __init__(self, number_of_sessions: int, number_of_stars: str):
         if(number_of_sessions < 1):
@@ -23,13 +19,13 @@ class Step():
         self.number_of_sessions = number_of_sessions
         self.number_of_stars = number_of_stars
     def make_step(self):
-        print(f"Session: {self.number_of_sessions}, star: {self.number_of_stars}")
+        print(f"I completed {self.number_of_sessions} sessions and I rated my expert {self.number_of_stars} stars.")
 
 step1 = Step(2, "one")
 step1.make_step()
-
+print()
 step2 = Step(1, 'five')
 step2.make_step()
-
+print()
 step3 = Step(4, "six")
 step3.make_step()
